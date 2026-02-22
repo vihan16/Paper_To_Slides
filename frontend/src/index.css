@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+
+  --font-sans: 'Inter', 'Outfit', system-ui, sans-serif;
+}
+
+body {
+  @apply bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 min-h-screen antialiased selection:bg-primary-200 selection:text-primary-900;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/50 shadow-xl shadow-primary-900/5 rounded-2xl;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Custom fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
